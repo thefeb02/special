@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Happy Birthday, My Princess ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvas-confetti/1.9.2/confetti.browser.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="ambient"></div>
+<div class="cursor-light" id="cursor-light"></div>
+<div class="side-memory left memory-a" data-memory="11.jpeg"><img src="img/11.jpeg" alt="Her memory"><span>♡</span></div>
+<div class="side-memory left memory-b" data-memory="22.jpeg"><img src="img/22.jpeg" alt="Her memory"><span>♡</span></div>
+<div class="side-memory right memory-c" data-memory="33.jpeg"><img src="img/33.jpeg" alt="Her memory"><span>♡</span></div>
+<div class="side-memory right memory-d" data-memory="44.jpeg"><img src="img/44.jpeg" alt="Her memory"><span>♡</span></div>
+<div class="side-memory right memory-e" data-memory="99.jpeg"><img src="img/99.jpeg" alt="Her memory"><span>♡</span></div>
+
+<!-- ============ SCENE 0: SIMPLE CUTE ENTRY ============ -->
+<section class="scene" id="scene-lock">
+  <div class="welcome-card">
+    <span class="welcome-heart">💗</span>
+    <div class="welcome-title">Hi, my love</div>
+    <div class="welcome-sub">A  surprise is waiting for you ✨</div>
+    <div class="keypad-display" id="keypad-display"><span class="keypad-dots">♡ ♡ ♡ ♡ ♡ ♡ ♡ ♡</span></div>
+    <input class="password-input" id="password-input" type="tel" inputmode="numeric" maxlength="8" aria-label="Birthday passcode" autocomplete="off" style="position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;">
+    <div class="keypad" id="keypad" aria-label="Birthday keyboard">
+      <button class="key" data-key="1">1</button><button class="key" data-key="2">2</button><button class="key" data-key="3">3</button>
+      <button class="key" data-key="4">4</button><button class="key" data-key="5">5</button><button class="key" data-key="6">6</button>
+      <button class="key" data-key="7">7</button><button class="key" data-key="8">8</button><button class="key" data-key="9">9</button>
+      <button class="key" data-key="clear">C</button><button class="key" data-key="0">0</button><button class="key delete" data-key="delete">⌫</button>
+    </div>
+    <button class="unlock-btn" id="unlock-btn">Unlock ❤️</button>
+    <div class="password-error" id="password-error"></div>
+    <div class="cute-note">Enter your special date to open it 💕</div>
+  </div>
+</section>
+
+
+
+<!-- ============ SCENE 2: CAKE ============ -->
+<section class="scene hidden-scene" id="scene-cake">
+  <div class="eyebrow">scene two</div>
+  <h2 class="section-title">Make a Wish</h2>
+  <div class="cake-wrap" id="cake">
+    <div class="cake-plate"></div>
+    <div class="cake-tier tier1"></div>
+    <div class="drip"></div>
+    <div class="cake-tier tier2"></div>
+    <div class="cake-tier tier3"></div>
+    <div class="candle"><div class="flame" id="f1"></div></div>
+    <div class="candle"><div class="flame" id="f2"></div></div>
+    <div class="candle"><div class="flame" id="f3"></div></div>
+    <div class="candle"><div class="flame" id="f4"></div></div>
+  </div>
+  <button class="blow-btn" id="blow-btn">🎂 Blow the Candles</button>
+  <div class="make-wish" id="make-wish-text">✨ Make a Wish ✨</div>
+  <button class="unlock-btn" style="margin-top:30px; opacity:0.85;" onclick="goTo('scene-gallery')">Next →</button>
+</section>
+
+<!-- ============ SCENE 3: GALLERY ============ -->
+<section class="scene hidden-scene" id="scene-gallery">
+  <div class="eyebrow">scene three</div>
+  <h2 class="section-title">Photo Memories</h2>
+  <p class="section-sub">a few of my favorite moments with you</p>
+  <div class="gallery-grid" id="gallery-grid">
+    <div class="polaroid"><div class="photo-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>photo1.jpg</div><div class="cap">that smile</div></div>
+    <div class="polaroid"><div class="photo-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>photo2.jpg</div><div class="cap">us, laughing</div></div>
+    <div class="polaroid"><div class="photo-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>photo3.jpg</div><div class="cap">golden hour</div></div>
+    <div class="polaroid"><div class="photo-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>photo4.jpg</div><div class="cap">a quiet moment</div></div>
+    <div class="polaroid"><div class="photo-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>photo5.jpg</div><div class="cap">forever favorite</div></div>
+  </div>
+  <button class="unlock-btn" style="margin-top:40px;" onclick="goTo('scene-letter')">Next →</button>
+</section>
+
+<!-- ============ SCENE 4: LOVE LETTER ============ -->
+<section class="scene hidden-scene" id="scene-letter">
+  <div class="eyebrow">scene four</div>
+  <h2 class="section-title">A Letter For You</h2>
+  <div class="envelope-wrap" id="envelope">
+    <div class="envelope-flap"></div>
+    <div class="envelope-seal">❤</div>
+    <div class="envelope-body"></div>
+    <div class="letter-paper"></div>
+  </div>
+  <div class="envelope-hint">tap the envelope to open</div>
+  <div class="letter-full" id="letter-full"></div>
+  <button class="unlock-btn hidden-scene" id="letter-next" style="margin-top:20px;" onclick="goTo('scene-reasons')">Next →</button>
+</section>
+
+<!-- ============ SCENE 5: REASONS ============ -->
+<section class="scene hidden-scene" id="scene-reasons">
+  <div class="eyebrow">scene five</div>
+  <h2 class="section-title">Reasons I Love You</h2>
+  <div class="reasons-grid" id="reasons-grid">
+    <div class="reason-card glass"><img class="reason-photo" src="img/11.jpeg" alt="Your smile"><div class="ic">😊</div><p>Your Smile</p></div>
+    <div class="reason-card glass"><img class="reason-photo" src="img/22.jpeg" alt="Your eyes"><div class="ic">👀</div><p>Your Eyes</p></div>
+    <div class="reason-card glass"><img class="reason-photo" src="img/33.jpeg" alt="Your kind heart"><div class="ic">💗</div><p>Your Kind Heart</p></div>
+    <div class="reason-card glass"><img class="reason-photo" src="img/44.jpeg" alt="Your cute anger"><div class="ic">😤</div><p>Your Cute Anger</p></div>
+    <div class="reason-card glass"><img class="reason-photo" src="img/55.jpeg" alt="Your voice"><div class="ic">🎶</div><p>Your Voice</p></div>
+    <div class="reason-card glass"><img class="reason-photo" src="img/66.jpeg" alt="Your care"><div class="ic">🤗</div><p>Your Care</p></div>
+    <div class="reason-card glass"><img class="reason-photo" src="img/77.jpeg" alt="Everything about you"><div class="ic">✨</div><p>Everything About You</p></div>
+  </div>
+  <button class="unlock-btn" style="margin-top:44px;" onclick="goTo('scene-gift')">Next →</button>
+</section>
+
+<!-- ============ SCENE 6: GIFT BOX ============ -->
+<section class="scene hidden-scene" id="scene-gift">
+  <div class="eyebrow">scene six</div>
+  <h2 class="section-title">A Little Surprise</h2>
+  <div class="gift-box-wrap" id="gift-box-wrap" style="position:relative;">
+    <div class="gift-glow"></div>
+    <div class="gift-box" id="gift-box">
+      <div class="gift-base"></div>
+      <div class="ribbon-v"></div>
+      <div class="gift-lid"></div>
+      <div class="ribbon-h"></div>
+      <div class="ribbon-bow">🎀</div>
+    </div>
+    <div class="gift-reveal">
+      <div class="heart-big">❤️</div>
+      <div class="photo-ph ph-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="34" height="34"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>her favorite photo</div>
+      <div class="quote">"You are the greatest gift in my life."</div>
+    </div>
+  </div>
+  <button class="gift-btn" id="gift-btn" style="margin-top:30px;">🎁 Open Your Surprise</button>
+  <button class="unlock-btn" style="margin-top:30px; opacity:0.85;" onclick="goTo('scene-timeline')">Next →</button>
+</section>
+
+<!-- ============ SCENE 7: TIMELINE ============ -->
+<section class="scene hidden-scene" id="scene-timeline">
+  <div class="eyebrow">scene seven</div>
+  <h2 class="section-title">Our Story So Far</h2>
+  <div class="timeline" id="timeline">
+    <div class="tl-item"><div class="tl-dot"></div><h4>The Day We Met</h4><div class="photo-ph tl-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><h4>Our Happiest Memory</h4><div class="photo-ph tl-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><h4>Every Laugh Together</h4><div class="photo-ph tl-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg></div></div>
+    <div class="tl-item"><div class="tl-dot"></div><h4>Today — Your Birthday</h4><div class="photo-ph tl-photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="26" height="26"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg></div></div>
+  </div>
+  <button class="unlock-btn" style="margin-top:20px;" onclick="goTo('scene-final')">Next →</button>
+</section>
+
+<!-- ============ SCENE 8: FINAL ============ -->
+<section class="scene hidden-scene" id="scene-final">
+  <div class="stars" id="stars"></div>
+  
+  <div class="final-photo photo-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="40" height="40"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-4 4-3-3-6 6"/></svg>her biggest photo</div>
+  <div class="final-title">I Love You Forever ❤️</div>
+  <div class="final-sub">"No matter how many birthdays come, I promise to love you a little more every single day."</div>
+  <button class="replay-btn" style="margin-top:40px;" id="replay-btn">❤️ Replay My Surprise ❤️</button>
+</section>
+
+<audio id="bg-music" loop preload="none">
+  <source src="Happy.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
+
